@@ -31,7 +31,7 @@ class SearchKeyView(TemplateView):
       try:
         response = requests.request("GET", url, headers=headers, params=querystring)
         response = response.json()['googleGuggestedKeywords']
-        return render(request, self.template_name, {'form':form, 'response':response, 'post':post})
+        return render(request, self.template_name, {'form':form, 'response':response,'post':post  })
 
       except Exception:
         return HttpResponseRedirect(self.request.path_info)
@@ -44,7 +44,7 @@ class WhatsappView(TemplateView):
   def get(self, request):
      post = Post.objects.get(pk=1)
      form = WhatsappForm()
-     return render(request, self.template_name, {'form':form, 'post':post})
+     return render(request, self.template_name, {'form':form,'post':post})
      
 
   def post(self, request):
@@ -56,5 +56,5 @@ class WhatsappView(TemplateView):
      whatsapp = whatsapp.replace(" ","")
      whats_url = f'https://api.whatsapp.com/send?phone=+55{whatsapp}'
      whats_link = f'<i class="bx bxl-whatsapp bx-lg" style= "color:#25D366;"</i> https://api.whatsapp.com/send?phone=+55{whatsapp} <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>'
-     return render(request, self.template_name, {'whats_link':whats_link,'post':post, 'whats_url':whats_url})
+     return render(request, self.template_name, {'whats_link':whats_link, 'whats_url':whats_url, 'post':post})
   
