@@ -1,40 +1,69 @@
-{% extends "blog/base.html" %} {% load crispy_forms_tags %} {% block content %}
+{% extends "blog/base.html" %} {% load crispy_forms_tags %} 
+{% load static %}
 
-	<h1> Buscador de palavras e frases para SEO</h1>
+{% block title%} {% endblock %} {% block content %}
+
+<div class="main-content">
+	<div class="container">
+
+<h1> Buscador de palavras e frases para SEO </h1>
 			<h3 class="font-weight-light"> A escolha das palavras-chave certas é fundamental para SEO. Utilize o buscador grátis e ilimitado
-			de palavras-chave</h3>
+        de palavras-chave</h3>
 
-<div class="container mt-5 mb-3">
+
+<div class="container">
 
 	<div class="row">
-	
+
+    <p class="fs-7 col-md-10">Insira qualquer palavra ou frase e veja as top 10 keywords mais populares </p>
 	</div>
 
-	
+	<div class="row">
 
-	<div class="row g-5 border border-secondary">
-		<div class="col-md-6">
-			<h2>Pesquise qualquer palavra-chave ou frase</h2>
+    <div class="col-sm-6">
+
+     <div class="card">
+        <div class="card-body">
+    		<div class="col-md-12">
+          			<h2>Gerador de palavras-chave</h2>
 			<form method="post">
 				{% csrf_token %} {{ form | crispy}}
-				<button type="submit" class="btn btn-primary"  value="Submit">Pesquisar</button>
+				<br>
+        <button type="submit" class="btn btn-primary btn-block"  value="Submit">Gerar </button><p class="text-muted"> Não guardamos nenhum dado informado</p>
 </form>
-<br>
-      </div>
-      <div class="col-md-6">
-        <h2>Top 10 palavras e frases mais buscadas </h2><h6> Beta </h6>
-        
 
-         {% for search_key in response %}
+</div>
+      </div>
+      </div></div>
+         <div class="col-sm-6">
+<div class="card">
+        <div class="card-body">
       
+   
+        <h2>Top 10 palavras relacionadas</h2>
+
+        {% for search_key in response %}
+      
+        <ul class="list-group list-group-flush">
+       <li class="list-group-item"></li>
+           
+                 
+
    <ul class="list-group list-group-flush">
-  <li class="list-group-item">{{search_key}}</li>
+     
+     <li class="list-group-item">{{search_key}}</li>
+     
+    
       
-            {% endfor %} 
+  {% endfor %} 
         
       </div>
    
+ </div>
+ </div> 
  
+ </div>
+
 </div>
 
 <hr class="col-2 col-md-4 mb-3">
@@ -43,7 +72,7 @@
 	<div class="container">
 		<div class="row gx-4 gx-lg-5 justify-content-center">
 			<div class="col-md-10">
-				<h1 class="section-heading">Planejador de palavra-chave[Explicado]: {{post.title}}</h1>
+				<h1 class="section-heading">{{post.title}}</h1>
 				<img class="card-img-top" src="{{ post.photo_title.url }}" alt="{{post.title}}">
 
 <h2> {{post.subheading1}} </h2>
@@ -73,6 +102,10 @@
                 </div>
             </div>
         </article>
+      </div>
+    </div>
 
-
+<script src="{% static 'apis.js' %}"></script>
 {% endblock %}
+
+

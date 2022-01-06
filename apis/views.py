@@ -11,12 +11,12 @@ class SearchKeyView(TemplateView):
   template_name = 'apis/search_key.html'
   
   def get(self, request):
-    post = Post.objects.get(pk=1)
+    post = Post.objects.get(pk=4)
     form = SearchKeyForm()
     return render(request, self.template_name, {'form':form, 'post':post})
 
   def post(self, request):
-    post = Post.objects.get(pk=1)
+    post = Post.objects.get(pk=4)
     form = SearchKeyForm(request.POST)
     if form.is_valid():
       search_key = form.cleaned_data['search_key']
@@ -37,18 +37,17 @@ class SearchKeyView(TemplateView):
         return HttpResponseRedirect(self.request.path_info)
     
 class WhatsappView(TemplateView):
-  post = Post.objects.get(pk=1)
- 
+   
   template_name = 'apis/whatsapp.html'
   
   def get(self, request):
-     post = Post.objects.get(pk=1)
+     post = Post.objects.get(pk=2)
      form = WhatsappForm()
      return render(request, self.template_name, {'form':form,'post':post})
      
 
   def post(self, request):
-    post = Post.objects.get(pk=1)
+    post = Post.objects.get(pk=2)
     form = WhatsappForm(request.POST)
     if form.is_valid():
      whatsapp = form.cleaned_data['cell']

@@ -23,5 +23,5 @@ def policy_view(request, *args, **kwargs):
 
 def affiliate_view(request, *args, **kwargs):
   get_affiliate = TableAffiliate.objects.all()
-  post = Post.objects.get(pk=1)
+  post = Post.objects.get(pk=6)
   return render(request, "blog/affiliate.html", {"get_affiliate": get_affiliate, "post":post,} )
