@@ -7,6 +7,8 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+print(BASE_DIR)
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -18,7 +20,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['144.22.165.220', '.digitimes.com.br']
 
 
 # Application definition
@@ -113,7 +115,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+SECURE_SSL_REDIRECT = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -126,3 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_URL = ''

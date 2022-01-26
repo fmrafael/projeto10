@@ -5,11 +5,11 @@ import sys
 import cx_Oracle
 
 
-cx_Oracle.init_oracle_client(lib_dir=r"C:\Users\rafae\instantclient_21_3")
+cx_Oracle.init_oracle_client(lib_dir=os.getenv('LD_LIBRARY_PATH'))
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.production')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

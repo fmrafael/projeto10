@@ -1,0 +1,16 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 20, 2022 - 11:00:19
+Django version 4.0, using settings 'mysite.settings.production'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 20, 2022 - 11:00:54
+Django version 4.0, using settings 'mysite.settings.production'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+[20/Jan/2022 11:03:07] "GET / HTTP/1.1" 400 143

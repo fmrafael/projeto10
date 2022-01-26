@@ -22,9 +22,10 @@ from blog.views import home_view, policy_view, affiliate_view
 
 
 
+ path('admin/', admin.site.urls),
 urlpatterns = [ 
-path('admin', admin.site.urls),
   path('', home_view, name='home'),
+    path('admin/', admin.site.urls),
     path("", include("blog.urls", namespace="blog")),
     path('policy', policy_view, name='policy'),
     path("blog/affiliate", affiliate_view, name="affiliate"),
