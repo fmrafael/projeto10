@@ -20,11 +20,9 @@ from django.conf import settings
 from blog.views import home_view, policy_view, affiliate_view
 
 
-
-
 urlpatterns = [ 
-  path('', home_view, name='home'),
-    path('admin/', admin.site.urls),
+    path("admin", admin.site.urls),
+    path('', home_view, name='home'),
     path("", include("blog.urls", namespace="blog")),
     path('policy', policy_view, name='policy'),
     path("blog/affiliate", affiliate_view, name="affiliate"),

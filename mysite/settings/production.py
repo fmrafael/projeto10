@@ -2,7 +2,7 @@ from mysite.settings.settings import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.digitimes.com.br' , 'digitimes.com.br', '150.230.66.227']
+ALLOWED_HOSTS = ['www.digitimes.com.br' , 'digitimes.com.br', '144.22.165.220']
 
 #HTTPS settings
 SECURE_SSL_REDIRECT = True
