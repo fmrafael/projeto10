@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    
 ]
 
 SITE_ID = 1

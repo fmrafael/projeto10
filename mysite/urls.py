@@ -32,13 +32,10 @@ class BlogSitemap(Sitemap):
 
 sitemaps = {'blog':BlogSitemap}
 
-urlpatterns = [ 
+urlpatterns = [
 
 path('admin', admin.site.urls),
   path('', home_view, name='home'),
-
-    path("admin", admin.site.urls),
-    path('', home_view, name='home'),
   path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
      name='django.contrib.sitemaps.views.sitemap'),
     path("", include("blog.urls", namespace="blog")),
