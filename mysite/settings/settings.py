@@ -34,8 +34,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'apis.apps.ApisConfig',
-    'crispy_forms'
+    'crispy_forms',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
